@@ -14,4 +14,11 @@ feature 'homepage ' do
     click_button('Submit')
     expect(page).to have_content("John")
   end
+
+  feature 'play' do 
+    scenario " Players can view Points " do 
+    visit('/play')
+    expect(page).to have_content("Points")
+    end
+  end
 end
