@@ -11,7 +11,7 @@ feature 'homepage ' do
   feature 'play' do 
     scenario " Players can view Points " do 
     visit('/play')
-    expect(page).to have_content("Points")
+    expect(page).to have_content(@player_one_health)
     end
 
     scenario " player gets confirmation after an attack" do

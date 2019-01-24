@@ -18,6 +18,8 @@ class Battle < Sinatra::Base
   get '/play' do
     @player_one = $test_subject_1.name
     @player_two = $test_subject_2.name
+    @player_one_health = $test_subject_1.health
+    @player_two_health = $test_subject_2.health
     erb(:play)
   end
 
