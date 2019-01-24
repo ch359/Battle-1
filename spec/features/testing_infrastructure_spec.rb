@@ -22,8 +22,13 @@ feature 'homepage ' do
 
     scenario " attack to reduce player 2's HP" do 
     sign_in_and_play
-    attack = click_button('Attack P2')
-    expect{ attack }.to change{$test_subject_2.health}.by(-10)
+    expect{ $test_subject_2.take_damage(10) }.to change{$test_subject_2.health}.by(-10)
+    end
+
+    scenario "check attack button works" do
+      sign_in_and_play
+      click_button('Attack P2')
+      expect($test_subject_2.health).to eq(90)
     end
   end
 end
