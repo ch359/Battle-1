@@ -19,5 +19,11 @@ feature 'homepage ' do
     click_button('Attack P2')
     expect(page).to have_content("Successfully hit")
     end
+
+    scenario " attack to reduce player 2's HP" do 
+    sign_in_and_play
+    attack = click_button('Attack P2')
+    expect{attack}.to change{$test_subject_2.health}.by(-10)
+    end 
   end
 end

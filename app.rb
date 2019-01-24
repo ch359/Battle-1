@@ -21,7 +21,7 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  get '/attacked' do 
+  get '/attacked' do
     @player_one = $test_subject_1.name
     @player_two = $test_subject_2.name
     erb(:attacked)
